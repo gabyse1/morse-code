@@ -48,7 +48,20 @@ def decode_word (mw)
     c = decode_char w
     mw_decode += c.to_s
   }
-  return mw_decode
+  print "#{mw_decode} " 
 end
 
-decode_word('-- -.-- --')
+def decode (message)
+  word_array = message.split(/   /).map
+  wd_decode = ''
+  word_array.each { |w|
+    c = decode_word w
+    wd_decode += c.to_s}
+  puts "#{wd_decode} "
+end
+
+
+decode('-- -.--')
+decode ('-- -.--   -. .- -- .')
+decode ('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...
+')
